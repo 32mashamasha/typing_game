@@ -1,0 +1,6 @@
+<div class="col-sm-3 col-md-3 sidebar">
+	<%= select_tag 'ソート順', options_for_select([["正解数順", "score"], ["タイプ数多い順", 'letter_count'], ["ミスタッチ少ない順", 'miss_count']], @condition), {required: 'true', autofocus: 'true', class: 'form-control game-sort'} %>
+  <ul class="nav nav-sidebar">
+    <%= sidebar_list_items(@games) %>
+  </ul>
+</div>

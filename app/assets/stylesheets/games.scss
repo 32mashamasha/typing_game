@@ -1,0 +1,22 @@
+// Place all the styles related to the Games controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	padding-top: 40px;
+	font-family: 'Courier New', sans-serif;
+	text-align: center;
+}
+#timer {
+	font-size: 36px;
+	letter-spacing: 3px;
+}
+
+#target {
+	font-size: 48px;
+	letter-spacing: 3px;
+}
+.info {
+	color: #ccc;
+	font-size: 48px;
+}
