@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
   def index
-  	@games = Game.order_score
+  	@games = @user.games.order_score
   end
 
   def new_game
@@ -12,11 +12,11 @@ class HomesController < ApplicationController
   	@condition = params[:condition]
   	case @condition
   	when 'score'
-  		@games = Game.order_score
+  		@games = @user.games.order_score
   	when 'letter_count'
-  		@games = Game.order_letter
+  		@games = @user.games.order_letter
   	when 'miss_count'
-  		@games = Game.order_miss
+  		@games = @user.games.order_miss
   	end	
   end
 end

@@ -2,7 +2,7 @@ $ ->
     wordLists = ['apple', 'mario', 'arashi', 'test', 'macbook', "alfa", "bravo", "charlie", "delta", "echo", "foxtrot", "golf", "hotel", "india",
                 "juliett", "kilo", "lima", "mike", "november", "oscar", "papa", "quebec", "romeo",
                 "sierra", "tango", "uniform", "victor", "whiskey", "x-ray", "yankee", "zulu"]
-    timeLimit = 30
+    timeLimit = 10
     timer = 0
     timeLeft = 0
     startFlg = false
