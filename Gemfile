@@ -30,6 +30,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'rails_admin'
 
+gem 'config'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
