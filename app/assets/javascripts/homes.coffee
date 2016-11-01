@@ -14,7 +14,7 @@ $ ->
     $("#count").text(count)
     $("#miss").text(miss)
 
-    $(document).on 'keyup', (e) ->
+    $(document).on 'keyup', '#answer_text', (e) ->
         if(startFlg==false)
             alert('StartButtonを押してください')
             $("#answer_text").val('')
