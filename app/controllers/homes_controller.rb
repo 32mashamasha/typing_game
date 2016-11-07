@@ -1,6 +1,7 @@
 class HomesController < ApplicationController
   def index
-  	@games = @user.games.order_score
+  	@games = @user.games.order_score    
+    @categorys = Category.all
   end
 
   def sort

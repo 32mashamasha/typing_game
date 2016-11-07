@@ -8,15 +8,32 @@ body {
 	text-align: center;
 }
 #timer {
+	margin-left:40px;
 	font-size: 36px;
 	letter-spacing: 3px;
 }
 
 #target {
+	margin-left:40px;
 	font-size: 48px;
 	letter-spacing: 3px;
 }
+
+#description {
+	margin-left:40px;
+	font-size: 24px;
+	letter-spacing: 3px;
+}
+
 .info {
 	color: #ccc;
 	font-size: 48px;
+}
+
+.category {
+  height: 40px;
+  width: 160px;
+  font-size: 20px;
+  margin-left:470px;
+  margin-bottom:10px;
 }

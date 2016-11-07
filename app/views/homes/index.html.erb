@@ -24,9 +24,12 @@
   <div class="row">
     <%= render 'rank', {games: @games, condition: @condition} %>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <%= select_tag :category_id, options_for_select(@categorys.map{|o| [o.name, o.id]}), {required: 'true', autofocus: 'true', class: 'form-control category'}%>
+      <%#= select_tag 'カテゴリー', options_for_select([@categorys], @categorys), {required: 'true', autofocus: 'true', class: 'form-control category'} %>
       <button class="btn btn-primary btn-lg start-button">Start!</button>
       <p id="timer"></p>
-	    <p id="target"></p>
+      <p id="target"></p>
+	    <p id="description"></p>
 	    <div class="row">
 	      <div class="col-xs-4 col-md-offset-4 answer-form">
 		    	<input type="text" class="form-control" id="answer_text">

@@ -10,23 +10,23 @@ require "csv"
 Word.delete_all
 
 CSV.foreach('db/drink.csv') do |row|
-  Word.create(:text => row[1], :category_id => 1)
+  Word.create(:description => row[0], :text => row[1].gsub(" ", ""), :category_id => 1)
 end
 
 CSV.foreach('db/fruit.csv') do |row|
-  Word.create(:text => row[1], :category_id => 2)
+  Word.create(:description => row[0], :text => row[1].gsub(" ", ""), :category_id => 2)
 end
 
 CSV.foreach('db/vegetable.csv') do |row|
-  Word.create(:text => row[1], :category_id => 3)
+  Word.create(:description => row[0], :text => row[1].gsub(" ", ""), :category_id => 3)
 end
 
 CSV.foreach('db/meal.csv') do |row|
-  Word.create(:text => row[1], :category_id => 5)
+  Word.create(:description => row[0], :text => row[1].gsub(" ", ""), :category_id => 4)
 end
 
 CSV.foreach('db/shokuzai.csv') do |row|
-  Word.create(:text => row[1], :category_id => 4)
+  Word.create(:description => row[0], :text => row[1].gsub(" ", ""), :category_id => 5)
 end
 
 if Category.all.count == 0
