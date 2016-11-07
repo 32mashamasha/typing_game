@@ -11,4 +11,6 @@ Rails.application.routes.draw do
 
   resources :games do
   end
+
+  resources :words, only: [:index]
 end
