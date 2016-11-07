@@ -5,3 +5,34 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "csv"
+
+Word.delete_all
+
+CSV.foreach('db/drink.csv') do |row|
+  Word.create(:text => row[1], :category_id => 1)
+end
+
+CSV.foreach('db/fruit.csv') do |row|
+  Word.create(:text => row[1], :category_id => 2)
+end
+
+CSV.foreach('db/vegetable.csv') do |row|
+  Word.create(:text => row[1], :category_id => 3)
+end
+
+CSV.foreach('db/meal.csv') do |row|
+  Word.create(:text => row[1], :category_id => 5)
+end
+
+CSV.foreach('db/shokuzai.csv') do |row|
+  Word.create(:text => row[1], :category_id => 4)
+end
+
+if Category.all.count == 0
+  Category.create(id: 1, name: "飲み物")
+  Category.create(id: 2, name: "果物")
+  Category.create(id: 3, name: "野菜")
+  Category.create(id: 4, name: "料理")
+  Category.create(id: 5, name: "食材")
+end
