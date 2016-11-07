@@ -42,10 +42,14 @@ $ ->
               type: 'post'
               data: {game: {score: score, letter_count: count, miss_count: miss}}
             )
-        else
-          miss += 1
-          $("#miss").text(miss)
-          $("#count").text(count)
+      else
+        str = $("#answer_text").val()
+        str = str.substr(0, str.length-1)
+        console.log(str)
+        $("#answer_text").val(str)
+        miss += 1
+        $("#miss").text(miss)
+        $("#count").text(count)
 
 
     $(document).on 'change', '.game-sort', ->
