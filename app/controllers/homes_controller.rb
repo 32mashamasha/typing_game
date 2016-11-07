@@ -3,10 +3,6 @@ class HomesController < ApplicationController
   	@games = @user.games.order_score
   end
 
-  def new_game
-  	@games = Game.order_score
-  end
-
   def sort
   	@games = []
   	@condition = params[:condition]

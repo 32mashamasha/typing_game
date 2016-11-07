@@ -3,14 +3,12 @@ Rails.application.routes.draw do
   root to: 'welcomes#index'
 
   resources :homes, only: [:index] do
-  	collection do
-  		get :new_game
-  		get :sort
-  	end
+    collection do
+      get :sort
+    end
   end
 
-  resources :games do
-  end
+  resources :games, only: [:create]
 
   resources :words, only: [:index]
 end
