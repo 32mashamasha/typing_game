@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!, :set_current_user
   protect_from_forgery with: :exception
+  before_action :authenticate_user!
+  before_action :set_current_user
 
   def after_sign_in_path_for(resource)
     '/homes/'
