@@ -24,8 +24,9 @@
   <div class="row">
     <%= render 'rank', {games: @games, condition: @condition} %>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h3>制限時間は３０秒</h3>
+      <h3>チャレンジするカテゴリーを選んでください</h3>
       <%= select_tag :category_id, options_for_select(@categorys.map{|o| [o.name, o.id]}), {required: 'true', autofocus: 'true', class: 'form-control category'}%>
-      <%#= select_tag 'カテゴリー', options_for_select([@categorys], @categorys), {required: 'true', autofocus: 'true', class: 'form-control category'} %>
       <button class="btn btn-primary btn-lg start-button">Start!</button>
       <p id="timer"></p>
       <p id="target"></p>
