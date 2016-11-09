@@ -22,7 +22,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <%= render 'rank', {games: @games, condition: @condition} %>
+    <%= render 'rank', {games: @games, condition: @condition, categorys: @categorys, category: nil} %>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <h3>制限時間は３０秒</h3>
       <h3>チャレンジするカテゴリーを選んでください</h3>

@@ -37,10 +37,11 @@ $ ->
           $("#answer_text").val('')
           if(score == quest_count)
             $("#target").text("FINISH!")
+            category_id = $('#category_id').val()
             $.ajax(
               '/games/'
               type: 'post'
-              data: {game: {score: score, letter_count: count, miss_count: miss}}
+              data: {game: {score: score, letter_count: count, miss_count: miss, category_id: category_id}}
             )
       else
         str = $("#answer_text").val()
@@ -52,12 +53,13 @@ $ ->
         $("#count").text(count)
 
 
-    $(document).on 'change', '.game-sort', ->
-      condition = $(this).val()
+    $(document).on 'change', '.game-sort,.category-sort', ->
+      condition = $('.game-sort').val()
+      category_id = $('#category_id_sort').val()
       $.ajax(
         '/homes/sort/'
         type: 'get'
-        data: {condition: condition}
+        data: {condition: condition, category_id: category_id}
       )
 
     $(document).on 'click', '.start-button', ->
@@ -91,10 +93,11 @@ $ ->
       timeLeft--
 
     $.fn.stopGame = () ->
+      category_id = $('#category_id').val()
       $.ajax(
           '/games/'
           type: 'post'
-          data: {game: {score: score, letter_count: count, miss_count: miss}}
+          data: {game: {score: score, letter_count: count, miss_count: miss, category_id: category_id}}
       )
       clearInterval(timer)
       $('.start-button').show()

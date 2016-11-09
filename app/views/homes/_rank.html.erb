@@ -1,7 +1,9 @@
 <div class="col-sm-3 col-md-3 sidebar">
 	<h2>戦績</h2>
-	<%= select_tag 'ソート順', options_for_select([["正解数順", "score"], ["タイプ数多い順", 'letter_count'], ["ミスタッチ少ない順", 'miss_count']], @condition), {required: 'true', autofocus: 'true', class: 'form-control game-sort'} %>
+	<%= select_tag 'ソート順', options_for_select([["正解数順", "score"], ["タイプ数多い順", 'letter_count'], ["ミスタッチ少ない順", 'miss_count']], condition), {required: 'true', autofocus: 'true', class: 'form-control game-sort'} %>
+	<br />
+	<%= select_tag :category_id_sort, options_for_select(categorys.map{|o| [o.name, o.id]}, category.try!(:id)), {required: 'true', autofocus: 'true', class: 'form-control category-sort'}%>
   <ul class="nav nav-sidebar">
-    <%= sidebar_list_items(@games) %>
+    <%= sidebar_list_items(games) %>
   </ul>
 </div>

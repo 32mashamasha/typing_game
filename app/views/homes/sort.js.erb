@@ -1,1 +1,1 @@
-$('.sidebar').html('<%= j( render 'rank', {games: @games, condition: @condition} ) %>');
+$('.sidebar').html('<%= j( render partial:'rank', locals: {games: games, condition: condition, categorys: categorys, category: category} ) %>')
